@@ -7,7 +7,7 @@ import { Http, Response } from '@angular/http';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-    constructor(private http: Http){}
+    constructor(private https: Http){}
 
     empID = '';
     displayEmpfirstname; displayEmplastname; displayEmpage; displayEmpgender; displayEmpemail; displayEmpphone; displayEmpaddress; displayEmpcompany = '';
@@ -20,7 +20,7 @@ export class AppComponent {
     ];*/
 
     ngOnInit() {
-      this.http.get('http://localhost:3000/employees')
+      this.https.get('http://localhost:3000/employees')
       .subscribe(
         (res: Response)=>{
          const empDetailsDisplay = res.json();
@@ -30,7 +30,7 @@ export class AppComponent {
     }
 
     searchEmp(){
-      this.http.get('http://localhost:3000/employees/' + this.empID)
+      this.https.get('http://localhost:3000/employees/' + this.empID)
       .subscribe(
         (res: Response)=>{
           const empDetails = res.json();
