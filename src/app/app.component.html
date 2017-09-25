@@ -1,60 +1,22 @@
-<h1>
-  Employee details
-</h1>
-<hr>
-<div class="container">
-  <div class="searchContainer">
-    <input type="text" [(ngModel)]=empID>
-    <button (click)=searchEmp()>Search</button>
-  </div>
-  <br/>
+<section class="container">
+    <div class="login">
+        <h1>Login to Web App</h1>
+        <form method="post" action="index.html">
+            <p><input type="text" name="login" value="" placeholder="Username or Email"></p>
+            <p><input type="password" name="password" value="" placeholder="Password"></p>
+            <p class="remember_me">
+                <label>
+                  <input type="checkbox" name="remember_me" id="remember_me">
+                  Remember me on this computer
+                </label>
+            </p>
+            <p class="submit"><input type="submit" name="commit" value="Login"></p>
+        </form>
+    </div>
 
-  <table *ngIf="singleEmpShowHide">
-  <tr>
-    <td>
-      <div >
-      <div>First Name : {{displayEmpfirstname}}</div>
-      <div>Last Name : {{displayEmplastname}}</div>
-      <div>Age : {{displayEmpage}}</div>
-      <div>Gender : {{displayEmpgender}}</div>
-      <div>Email : {{displayEmpemail}}</div>
-      <div>Phone : {{displayEmpphone}}</div>
-      <div>Address : {{displayEmpaddress}}</div>
-      <div>Company : {{displayEmpcompany}}</div>
-      </div>
-    </td>
-    <td>
-      <img src={{displayEmppicture}} alt="photo">
-    </td>
-  </tr>
-  </table>
+    <div class="login-help">
+        <p>Forgot your password? <a href="index.html">Click here to reset it</a>.</p>
+    </div>
+</section>
 
-
-
-  <table *ngIf="empListShowHide">
-    <tr>
-      <th>ID</th>
-      <th>Photo</th>
-      <th>First Name</th>
-      <th>Last Name</th>
-      <th>Age</th>
-      <th>Gender</th>
-      <th>Email</th>
-      <th>Phone</th>
-      <th>Address</th>
-      <th>Company</th> 
-    </tr>
-    <tr *ngFor="let employees of empDetailsDisplay; let i = index">
-      <td>{{i+1}}</td>
-      <td><img src={{employees.picture}} alt="photo"></td>
-      <td>{{employees.firstname}}</td>
-      <td>{{employees.lastname}}</td>
-      <td>{{employees.age}}</td>
-      <td>{{employees.gender}}</td>
-      <td>{{employees.email}}</td>
-      <td>{{employees.phone}}</td>
-      <td>{{employees.address}}</td>
-      <td>{{employees.company}}</td>
-    </tr>
-  </table>
-</div>
+<app-employee-details></app-employee-details>

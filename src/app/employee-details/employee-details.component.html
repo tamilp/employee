@@ -1,0 +1,60 @@
+<h1>
+    Employee details
+</h1>
+<hr>
+<div class="container">
+    <div class="searchContainer">
+        <input type="text" [(ngModel)]=empID>
+        <button (click)=searchEmp()>Search</button>
+    </div>
+    <br/>
+
+    <table *ngIf="singleEmpShowHide">
+        <tr>
+            <td>
+                <div>
+                    <div>First Name : {{displayEmpfirstname}}</div>
+                    <div>Last Name : {{displayEmplastname}}</div>
+                    <div>Age : {{displayEmpage}}</div>
+                    <div>Gender : {{displayEmpgender}}</div>
+                    <div>Email : {{displayEmpemail}}</div>
+                    <div>Phone : {{displayEmpphone}}</div>
+                    <div>Address : {{displayEmpaddress}}</div>
+                    <div>Company : {{displayEmpcompany}}</div>
+                </div>
+            </td>
+            <td>
+                <img src={{displayEmppicture}} alt="photo">
+            </td>
+        </tr>
+    </table>
+
+
+
+    <table *ngIf="empListShowHide">
+        <tr>
+            <th>ID</th>
+            <th>Photo</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Age</th>
+            <th>Gender</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Address</th>
+            <th>Company</th>
+        </tr>
+        <tr *ngFor="let employees of empDetailsDisplay; let i = index">
+            <td>{{i+1}}</td>
+            <td><img src={{employees.picture}} alt="photo"></td>
+            <td>{{employees.firstname}}</td>
+            <td>{{employees.lastname}}</td>
+            <td>{{employees.age}}</td>
+            <td>{{employees.gender}}</td>
+            <td>{{employees.email}}</td>
+            <td>{{employees.phone}}</td>
+            <td>{{employees.address}}</td>
+            <td>{{employees.company}}</td>
+        </tr>
+    </table>
+</div>
